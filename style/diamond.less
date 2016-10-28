@@ -1,0 +1,93 @@
+@import "variables";
+
+// BODY
+
+.diamond-body(@position: 'left') when (@position = 'left') {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.diamond-body(@position: 'left') when (@position = 'center') {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.diamond-body(@position: 'left') when (@position = 'right') {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.diamond-body(@position: 'left') {
+    background-color: @color-white;
+    position: relative;
+}
+
+// BOTTOM
+
+//.diamond-bottom(@width; @edge-position) when (@edge-position = 'right') {
+//    &:after {
+//        border-left-width: 2*@box-width - (3*@box-width - @container-width)/2;;
+//        border-right-width: (3*@box-width - @container-width)/2;
+//    }
+//}
+.diamond-bottom(@width; @edge-position) when (@edge-position = 'right') {
+    &:after {
+        border-right-width: @box-width - (@container-width+@box-width)/4;;
+        border-left-width: (@container-width+@box-width)/4;
+    }
+}
+
+.diamond-bottom(@width; @edge-position) when (@edge-position = 'left') {
+    &:after {
+        border-left-width: @box-width - (@container-width+@box-width)/4;;
+        border-right-width: (@container-width+@box-width)/4;
+    }
+}
+
+.diamond-bottom(@width; @edge-position) {
+    &:after {
+        display: block;
+        content: '';
+        height: @spacing;
+        width: @width;
+        border-style: solid;
+        position: absolute;
+        left: 0;
+        border-color: @color-white transparent transparent transparent;
+        bottom: -@spacing;
+        border-bottom-width: 0;
+        border-top-width: @spacing;
+    }
+}
+
+// TOP
+
+.diamond-top(@width; @edge-position) when (@edge-position = 'right') {
+    &:before {
+        border-right-width: @box-width - (@container-width+@box-width)/4;;
+        border-left-width: (@container-width+@box-width)/4;
+    }
+}
+
+.diamond-top(@width; @edge-position) when (@edge-position = 'left') {
+    &:before {
+        border-left-width: @box-width - (@container-width+@box-width)/4;;
+        border-right-width: (@container-width+@box-width)/4;
+    }
+}
+
+.diamond-top(@width; @edge-position) {
+    &:before {
+        display: block;
+        content: '';
+        height: @spacing;
+        width: @width;
+        border-style: solid;
+        position: absolute;
+        left: 0;
+        top: -@spacing;
+        border-color: transparent transparent @color-white transparent;
+        border-top-width: 0;
+        border-bottom-width: @spacing;
+    }
+}

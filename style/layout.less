@@ -1,37 +1,14 @@
 @import "variables";
-
-.container {
-    width: @container-width;
-    margin: 0 auto;
-}
+@import "diamond";
 
 body {
     margin: 0;
     padding: 0;
 }
 
-header,
-.box,
-footer {
-    background-color: @color-white;
-    position: relative;
-
-    &:after {
-        display: block;
-        content: '';
-        height: @spacing;
-        width: 2*@box-width;
-        border-style: solid;
-        position: absolute;
-        left: 0;
-        border-color: @color-white transparent transparent transparent;
-        bottom: -@spacing;
-        border-bottom-width: 0;
-        border-top-width: @spacing;
-    }
-}
-
 header {
+    .diamond-body();
+    .diamond-bottom(2*@box-width, 'right');
     width: 2*@box-width;
     padding: @spacing;
 
@@ -39,103 +16,54 @@ header {
         float: left;
         width: 40%;
     }
-
-    &:after {
-        display: block;
-        content: '';
-        height: @spacing;
-        width: 2*@box-width;
-        border-style: solid;
-        position: absolute;
-        left: 0;
-        border-color: @color-white transparent transparent transparent;
-        bottom: -@spacing;
-        border-bottom-width: 0;
-        border-top-width: @spacing;
-        border-left-width: 2*@box-width - (3*@box-width - @container-width)/2;;
-        border-right-width: (3*@box-width - @container-width)/2;
-    }
-
 }
 
-.box {
-    background-color: @color-white;
+section {
     padding: @spacing;
     width: @box-width;
     margin-top: 2*@spacing;
     margin-bottom: 2*@spacing;
-    position: relative;
+}
 
-    &.box--left {
-        margin-left: 0;
-    }
+section:nth-child(2) {
+    .diamond-body('right');
+    .diamond-top(@box-width, 'left');
+    .diamond-bottom(@box-width, 'left');
+}
 
-    &.box--right {
-        margin-left: auto;
-        margin-right: 0;
-    }
+section:nth-child(3) {
+    .diamond-body('center');
+    .diamond-top(@box-width, 'right');
+    .diamond-bottom(@box-width, 'left');
+}
 
-    &.box--center {
-        margin-left: auto;
-        margin-right: auto;
-    }
+section:nth-child(4) {
+    .diamond-body('left');
+    .diamond-top(@box-width, 'right');
+    .diamond-bottom(@box-width, 'right');
+}
 
-    & > :first-child {
-        margin-top: 0;
-        padding-top: 0;
-    }
-    & > :last-child {
-        margin-bottom: 0;
-        padding-bottom: 0;
-    }
+section:nth-child(5) {
+    .diamond-body('center');
+    .diamond-top(@box-width, 'left');
+    .diamond-bottom(@box-width, 'right');
+}
 
-    // links
+section:nth-child(6) {
+    .diamond-body('right');
+    .diamond-top(@box-width, 'left');
+    .diamond-bottom(@box-width, 'left');
+}
 
-    &:before,
-    &:after {
-        display: block;
-        content: '';
-        height: @spacing;
-        width: @box-width;
-        border-style: solid;
-        position: absolute;
-        left: 0;
-        border-left-width: @box-width/2;
-        border-right-width: @box-width/2;
-    }
+section:nth-child(7) {
+    .diamond-body('center');
+    .diamond-top(@box-width, 'right');
+    .diamond-bottom(@box-width, 'right');
+}
 
-    &:before {
-        top: -@spacing;
-        border-color: transparent transparent @color-white transparent;
-        border-top-width: 0;
-        border-bottom-width: @spacing;
-    }
-
-    &:after {
-        border-color: @color-white transparent transparent transparent;
-        bottom: -@spacing;
-        border-bottom-width: 0;
-        border-top-width: @spacing;
-    }
-
-    &:nth-child(3):before,
-    &:nth-child(4):before,
-    &:nth-child(4):after,
-    &:nth-child(5):after {
-        border-right-width: @box-width - (@container-width+@box-width)/4;;
-        border-left-width: (@container-width+@box-width)/4;
-    }
-
-    &:nth-child(2):after,
-    &:nth-child(3):after,
-    &:nth-child(5):before,
-    &:nth-child(6):before {
-        border-left-width: @box-width - (@container-width+@box-width)/4;;
-        border-right-width: (@container-width+@box-width)/4;
-    }
-
-    &:nth-child(2):before {
-        border-right-width: @box-width - (3*@box-width - @container-width)/2;;
-        border-left-width: (3*@box-width - @container-width)/2;
-    }
+footer {
+    .diamond-body('right');
+    .diamond-top(2*@box-width, 'right');
+    width: 2*@box-width;
+    padding: @spacing;
 }
