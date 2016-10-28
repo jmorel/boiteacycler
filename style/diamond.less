@@ -1,5 +1,48 @@
 @import "variables";
 
+// INTERNAL
+
+@small-to-small-short-length: @section-width - (@container-width+@section-width)/4;
+@small-to-small-long-length: (@container-width+@section-width)/4;
+@small-to-large-short-length: (3*@section-width - @container-width)/2;
+@small-to-large-long-length: @section-width - (3*@section-width - @container-width)/2;
+@large-to-small-short-length: (3*@section-width - @container-width)/2;
+@large-to-small-long-length: 2*@section-width - (3*@section-width - @container-width)/2;
+@large-to-large-short-length: 2*@section-width - @container-width/2;
+@large-to-large-long-length: @container-width/2;
+
+._diamond-edge(@border-left-width, @border-right-width) {
+    display: block;
+    content: '';
+    height: @spacing;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    border-style: solid;
+    border-left-width: @border-left-width;;
+    border-right-width: @border-right-width;
+}
+
+._diamond-top(@border-left-width, @border-right-width) {
+    &:before {
+        ._diamond-edge(@border-left-width, @border-right-width);
+        border-top-width: 0;
+        border-bottom-width: @spacing;
+        top: -@spacing;
+        border-color: transparent transparent @color-white transparent;
+    }
+}
+
+._diamond-bottom(@border-left-width, @border-right-width) {
+    &:after {
+        ._diamond-edge(@border-left-width, @border-right-width);
+        border-bottom-width: 0;
+        border-top-width: @spacing;
+        bottom: -@spacing;
+        border-color: @color-white transparent transparent transparent;
+    }
+}
+
 // BODY
 
 .diamond-body(@position: 'left') when (@position = 'left') {
@@ -24,70 +67,68 @@
 
 // BOTTOM
 
-//.diamond-bottom(@width; @edge-position) when (@edge-position = 'right') {
-//    &:after {
-//        border-left-width: 2*@box-width - (3*@box-width - @container-width)/2;;
-//        border-right-width: (3*@box-width - @container-width)/2;
-//    }
-//}
-.diamond-bottom(@width; @edge-position) when (@edge-position = 'right') {
-    &:after {
-        border-right-width: @box-width - (@container-width+@box-width)/4;;
-        border-left-width: (@container-width+@box-width)/4;
-    }
+.diamond-bottom-large-to-small(@edge-position) when (@edge-position = 'right') {
+    ._diamond-bottom(@large-to-small-long-length, @large-to-small-short-length);
 }
 
-.diamond-bottom(@width; @edge-position) when (@edge-position = 'left') {
-    &:after {
-        border-left-width: @box-width - (@container-width+@box-width)/4;;
-        border-right-width: (@container-width+@box-width)/4;
-    }
+.diamond-bottom-large-to-small(@edge-position) when (@edge-position = 'left') {
+    ._diamond-bottom(@large-to-small-short-length, @large-to-small-long-length);
 }
 
-.diamond-bottom(@width; @edge-position) {
-    &:after {
-        display: block;
-        content: '';
-        height: @spacing;
-        width: @width;
-        border-style: solid;
-        position: absolute;
-        left: 0;
-        border-color: @color-white transparent transparent transparent;
-        bottom: -@spacing;
-        border-bottom-width: 0;
-        border-top-width: @spacing;
-    }
+.diamond-bottom-small-to-small(@edge-position) when (@edge-position = 'right') {
+    ._diamond-bottom(@small-to-small-long-length, @small-to-small-short-length);
+}
+
+.diamond-bottom-small-to-small(@edge-position) when (@edge-position = 'left') {
+    ._diamond-bottom(@small-to-small-short-length, @small-to-small-long-length);
+}
+
+.diamond-bottom-small-to-large(@edge-position) when (@edge-position = 'right') {
+    ._diamond-bottom(@small-to-large-long-length, @small-to-large-short-length);
+}
+
+.diamond-bottom-small-to-large(@edge-position) when (@edge-position = 'left') {
+    ._diamond-bottom(@small-to-large-short-length, @small-to-large-long-length);
+}
+
+.diamond-bottom-large-to-large(@edge-position) when (@edge-position = 'right') {
+    ._diamond-bottom(@large-to-large-long-length, @large-to-large-short-length);
+}
+
+.diamond-bottom-large-to-large(@edge-position) when (@edge-position = 'left') {
+    ._diamond-bottom(@large-to-large-short-length, @large-to-large-long-length);
 }
 
 // TOP
 
-.diamond-top(@width; @edge-position) when (@edge-position = 'right') {
-    &:before {
-        border-right-width: @box-width - (@container-width+@box-width)/4;;
-        border-left-width: (@container-width+@box-width)/4;
-    }
+.diamond-top-large-to-small(@edge-position) when (@edge-position = 'right') {
+    ._diamond-top(@large-to-small-long-length, @large-to-small-short-length);
 }
 
-.diamond-top(@width; @edge-position) when (@edge-position = 'left') {
-    &:before {
-        border-left-width: @box-width - (@container-width+@box-width)/4;;
-        border-right-width: (@container-width+@box-width)/4;
-    }
+.diamond-top-large-to-small(@edge-position) when (@edge-position = 'left') {
+    ._diamond-top(@large-to-small-short-length, @large-to-small-long-length);
 }
 
-.diamond-top(@width; @edge-position) {
-    &:before {
-        display: block;
-        content: '';
-        height: @spacing;
-        width: @width;
-        border-style: solid;
-        position: absolute;
-        left: 0;
-        top: -@spacing;
-        border-color: transparent transparent @color-white transparent;
-        border-top-width: 0;
-        border-bottom-width: @spacing;
-    }
+.diamond-top-large-to-large(@edge-position) when (@edge-position = 'right') {
+    ._diamond-top(@large-to-large-long-length, @large-to-large-short-length);
+}
+
+.diamond-top-large-to-large(@edge-position) when (@edge-position = 'left') {
+    ._diamond-top(@large-to-large-short-length, @large-to-large-long-length);
+}
+
+.diamond-top-small-to-large(@edge-position) when (@edge-position = 'right') {
+    ._diamond-top(@small-to-large-long-length, @small-to-large-short-length);
+}
+
+.diamond-top-small-to-large(@edge-position) when (@edge-position = 'left') {
+    ._diamond-top(@small-to-large-short-length, @small-to-large-long-length);
+}
+
+.diamond-top-small-to-small(@edge-position) when (@edge-position = 'right') {
+    ._diamond-top(@small-to-small-long-length, @small-to-small-short-length);
+}
+
+.diamond-top-small-to-small(@edge-position) when (@edge-position = 'left') {
+    ._diamond-top(@small-to-small-short-length, @small-to-small-long-length);
 }

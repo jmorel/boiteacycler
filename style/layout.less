@@ -8,8 +8,8 @@ body {
 
 header {
     .diamond-body();
-    .diamond-bottom(2*@box-width, 'right');
-    width: 2*@box-width;
+    .diamond-bottom-large-to-small('right');
+    width: 2*@section-width;
     padding: @spacing;
 
     img {
@@ -20,50 +20,51 @@ header {
 
 section {
     padding: @spacing;
-    width: @box-width;
+    width: @section-width;
     margin-top: 2*@spacing;
     margin-bottom: 2*@spacing;
 }
 
 section:nth-child(2) {
     .diamond-body('right');
-    .diamond-top(@box-width, 'left');
-    .diamond-bottom(@box-width, 'left');
+    .diamond-top-small-to-large('left');
+    .diamond-bottom-small-to-small('left');
 }
 
 section:nth-child(3) {
     .diamond-body('center');
-    .diamond-top(@box-width, 'right');
-    .diamond-bottom(@box-width, 'left');
+    .diamond-top-small-to-small('right');
+    .diamond-bottom-small-to-small('left');
 }
 
 section:nth-child(4) {
     .diamond-body('left');
-    .diamond-top(@box-width, 'right');
-    .diamond-bottom(@box-width, 'right');
+    .diamond-top-small-to-small('right');
+    .diamond-bottom-small-to-small('right');
 }
 
 section:nth-child(5) {
     .diamond-body('center');
-    .diamond-top(@box-width, 'left');
-    .diamond-bottom(@box-width, 'right');
+    .diamond-top-small-to-small('left');
+    .diamond-bottom-small-to-small('right');
 }
 
 section:nth-child(6) {
     .diamond-body('right');
-    .diamond-top(@box-width, 'left');
-    .diamond-bottom(@box-width, 'left');
+    .diamond-top-small-to-small('left');
+    .diamond-bottom-small-to-large('left');
 }
 
 section:nth-child(7) {
-    .diamond-body('center');
-    .diamond-top(@box-width, 'right');
-    .diamond-bottom(@box-width, 'right');
+    .diamond-body('left');
+    .diamond-top-large-to-small('right');
+    .diamond-bottom-large-to-large('right');
+    width: 2*@section-width;
 }
 
 footer {
     .diamond-body('right');
-    .diamond-top(2*@box-width, 'right');
-    width: 2*@box-width;
+    .diamond-top-large-to-large('left');
+    width: 2*@section-width;
     padding: @spacing;
 }
