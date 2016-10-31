@@ -1,0 +1,25 @@
+@import "variables";
+
+form {
+    display: inline-flex;
+}
+
+input {
+    font-family: inherit;
+    font-size: 1em;
+    line-height: 1.33em;
+    padding: 0 0.2em;
+}
+
+button {
+    background-color: @color-lightestgray;
+    border: 1px solid @color-lightgray;
+    border-left-width: 0;
+    font-size: 0.9em;
+    font-family: inherit;
+    border-radius: 0 @radius @radius 0;
+
+    &:hover {
+        background-color: @color-lightergray;
+    }
+}
