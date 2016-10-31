@@ -3,6 +3,7 @@
 @import "layout";
 @import "form";
 @import "event";
+@import "grid";
 
 *,
 *:before,
@@ -11,4 +12,25 @@
 }
 
 html {
+}
+
+
+.quote {
+    border-left: 5px solid @color-lightestgray;
+    padding-left: @spacing/2;
+    margin: 1em 0;
+}
+
+blockquote {
+    padding: 0;
+    margin: 1em 0;
+}
+
+figcaption {
+    font-style: italic;
+    margin: 1em 0;
+}
+
+.quote figcaption::before {
+    content: "— ";
 }
