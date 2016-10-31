@@ -18,18 +18,38 @@ header {
     background-image: url('../img/pexels-photo-94710.jpeg');
     padding-bottom: @spacing;
 
-    .diamond {
+    .diamond:first-child {
         .diamond-body();
         .diamond-bottom-large-to-small('right');
         width: 2*@section-width;
-        padding: @spacing;
+        height: @banner-height - @spacing;
+        margin-bottom: 2*@spacing;
+
+        img {
+            position: absolute;
+            left: 0;
+            top: -40px;
+        }
+
+        h1 {
+            margin: 0;
+            position: absolute;
+            right: @spacing;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
     }
 
-    img {
-        float: left;
-        width: 40%;
+    .diamond:last-child {
+        padding: @spacing;
+        width: @section-width;
+        margin-top: 2*@spacing;
+        .diamond-body('right');
+        .diamond-top-small-to-large('left');
+        .diamond-bottom-small-to-small('left');
     }
 }
+
 
 section {
     background-image: url('../img/pexels-photo-94710.jpeg');
@@ -45,23 +65,13 @@ section:nth-child(2) {
     background-image: url('../img/pexels-photo-94710.jpeg');
 
     .diamond {
-        .diamond-body('right');
-        .diamond-top-small-to-large('left');
-        .diamond-bottom-small-to-small('left');
-    }
-}
-
-section:nth-child(3) {
-    background-image: url('../img/pexels-photo-94710.jpeg');
-
-    .diamond {
         .diamond-body('center');
         .diamond-top-small-to-small('right');
         .diamond-bottom-small-to-small('left');
     }
 }
 
-section:nth-child(4) {
+section:nth-child(3) {
     background-image: url('../img/pexels-photo-94710.jpeg');
 
     .diamond {
@@ -71,7 +81,7 @@ section:nth-child(4) {
     }
 }
 
-section:nth-child(5) {
+section:nth-child(4) {
     background-image: url('../img/pexels-photo-94710.jpeg');
 
     .diamond {
@@ -81,7 +91,7 @@ section:nth-child(5) {
     }
 }
 
-section:nth-child(6) {
+section:nth-child(5) {
     background-image: url('../img/pexels-photo-94710.jpeg');
 
     .diamond {
@@ -91,7 +101,7 @@ section:nth-child(6) {
     }
 }
 
-section:nth-child(7) {
+section:nth-child(6) {
     background-image: url('../img/pexels-photo-94710.jpeg');
 
     .diamond {
@@ -105,6 +115,7 @@ section:nth-child(7) {
 footer {
     background-image: url('../img/pexels-photo-94710.jpeg');
     padding-top: @spacing;
+    font-size: 0.8em;
 
     .diamond {
         .diamond-body('right');
