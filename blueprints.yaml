@@ -1,0 +1,11 @@
+name: Boite A Cycler
+version: 0.0.1
+description: "A one-page theme for the Boite à Cycler associqtion"
+icon: empire
+author:
+  name: Jérémy Morel
+  email: jeremy@hexagonal.io
+  url: http://hexagonal.io
+homepage: https://github.com/jmorel/boiteacycler
+bugs: https://github.com/jmorel/boiteacycler/issues
+license: MIT

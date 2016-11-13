@@ -1,13 +1,29 @@
-<html>
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: theme_config.default_lang }}">
+
 <head>
-    <link rel="stylesheet" href="style/main.css">
-    <link rel="stylesheet" href="vendor/Font-Awesome/css/font-awesome.min.css">
-    <meta charset="utf-8">
+    {% block head %}
+        <meta charset="utf-8" />
+
+        <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        {% block stylesheets %}
+            {% do assets.addCss('theme://css-compiled/boiteacycler.min.css', 100) %}
+            {% do assets.addCss('theme://vendor/Font-Awesome/css/font-awesome.min.css', 99) %}
+        {% endblock stylesheets %}
+
+        {{ assets.css() }}
+
+    {% endblock head  %}
 </head>
 <body>
 <header>
     <div class="diamond">
-        <img src="img/logo.png" alt="La boite à cycler">
+        <img src="{{ url('theme://images/logo.png') }}" alt="La boite à cycler">
         <div>
             <h1>
                 Atelier vélo participatif libre et gratuit
