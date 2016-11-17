@@ -1,0 +1,27 @@
+title: FAQ
+'@extends': default
+
+form:
+    fields:
+        tabs:
+            type: tabs
+            active: 1
+
+            fields:
+                questions:
+                    type: tab
+                    title: Questions
+                    fields:
+                        header.questions:
+                            name: questions
+                            type: list
+                            label: Questions
+                            style: vertical
+
+                            fields:
+                                .question:
+                                    type: text
+                                    label: Question
+                                .answer:
+                                    type: textarea
+                                    label: Réponse

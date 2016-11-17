@@ -1,0 +1,37 @@
+title: modular_home
+@extends: 'modular'
+
+form:
+    fields:
+        tabs:
+            type: tabs
+            active: 1
+
+            fields:
+                header:
+                    type: tab
+                    title: Header
+                    fields:
+                        header.header_tagline:
+                            name: tagline
+                            type: text
+                            label: Tagline
+                        header.header_events_call_to_action:
+                            name: events_call_to_action
+                            type: markdown
+                            label: Events call to action
+                footer:
+                    type: tab
+                    title: Footer
+                    fields:
+                        header.footer_columns:
+                            name: columns
+                            type: list
+                            label: Columns
+                            style: vertical
+
+                            fields:
+                                .content:
+                                    name: content
+                                    type: markdown
+                                    label: Content

@@ -1,0 +1,11 @@
+<section id="faq">
+    <div class="diamond">
+        <h2>Foire aux questions</h2>
+        {{ content }}
+        {% for question in page.header.questions %}
+        <h3>{{ question.question }}</h3>
+        <p>{{ question.answer }}</p>
+        {% endfor %}
+
+    </div>
+</section>

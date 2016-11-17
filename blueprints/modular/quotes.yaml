@@ -1,0 +1,27 @@
+title: FAQ
+'@extends': default
+
+form:
+    fields:
+        tabs:
+            type: tabs
+            active: 1
+
+            fields:
+                quotes:
+                    type: tab
+                    title: Quotes
+                    fields:
+                        header.quotes:
+                            name: quotes
+                            type: list
+                            label: Quotes
+                            style: vertical
+
+                            fields:
+                                .quote:
+                                    type: textarea
+                                    label: Quote
+                                .author:
+                                    type: text
+                                    label: Author

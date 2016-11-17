@@ -1,0 +1,33 @@
+title: Diamond section
+'@extends': default
+
+form:
+    fields:
+        tabs:
+            type: tabs
+            active: 1
+
+            fields:
+                layout:
+                    type: tab
+                    title: Layout options
+                    fields:
+                        header.background:
+                            name: background
+                            type: file
+                            label: Background
+                        header.size:
+                            name: size
+                            type: select
+                            label: Size
+                            options:
+                                'diamond--normal': Normal
+                                'diamond--large': Large
+                        header.position:
+                            name: position
+                            type: select
+                            label: Position
+                            options:
+                                'diamond--left': Left
+                                'diamond--center': Center
+                                'diamond--right': Right

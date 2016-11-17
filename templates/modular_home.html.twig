@@ -1,0 +1,60 @@
+{% extends "partials/base.html.twig" %}
+
+{% block content %}
+<header>
+    <div class="diamond">
+        <img src="{{ url('theme://images/logo.png') }}" alt="La boite à cycler">
+        <div>
+            <h1>
+                {{ page.header.header_tagline }}
+            </h1>
+            <nav>
+                <ul>
+                    {% for section in page.collection %}
+                    <li>
+                        <a href="#{{ section.menu }}">{{ section.title }}</a>
+                    </li>
+                    {% endfor %}
+            </nav>
+        </div>
+    </div>
+
+    <div class="diamond" id="evenements">
+        <div class="event">
+            <em>Prochain événement</em>
+            <h2 class="event-name">Atelier vélo</h2>
+            <p>
+                Le <span class="event-date">dimanche 23 octobre de 11h à 13h</span>
+                <span class="event-location">devant la médiathèque de Viroflay</span>
+            </p>
+            <p class="event-links">
+                <a href="#" class="event-link"><i class="fa fa-fw fa-map-marker"></i>plan</a>
+                <a href="#" class="event-link"><i class="fa fa-fw fa-calendar"></i>ajouter à mon calendrier</a>
+            </p>
+        </div>
+        <p>
+            {{ page.header.header_events_call_to_action | markdown }}
+        </p>
+
+        <h2>Tous les événements à venir</h2>
+        <iframe id="1134672360" src="https://www.google.com/calendar/embed?src=colibrisdeversailles@gmail.com&amp;color=%23668CD9&amp;mode=AGENDA&amp;showTitle=0&amp;showNav=1&amp;showDate=1&amp;showTabs=1&amp;showCalendars=0&amp;hl=fr"
+            title="colibrisdeversailles@gmail.com" width="100%" height="300" frameborder="0" scrolling="no"></iframe>
+    </div>
+</header>
+
+{% for subpage in page.collection() %}
+    {{ subpage.content }}
+{% endfor %}
+
+<footer>
+    <div class="diamond">
+        <div class="row">
+            {% for column in page.header.footer_columns %}
+            <div class="col">
+                {{ column.content | markdown }}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</footer>
+{% endblock content %}
