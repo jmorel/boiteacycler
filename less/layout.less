@@ -21,10 +21,25 @@ header {
 
 header .diamond:first-child {
     margin-bottom: 2*@spacing;
+    height: @banner-height - @spacing;
 }
 
 header .diamond:last-child {
     margin-top: 2*@spacing;
+}
+
+header img {
+    position: absolute;
+    left: 0;
+    top: -40px;
+}
+
+header h1 {
+    margin: 0;
+    position: absolute;
+    right: @spacing;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 section {
