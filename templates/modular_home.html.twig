@@ -3,7 +3,7 @@
 {% block content %}
 <header>
     <div class="container">
-        <div class="diamond">
+        <div class="diamond diamond--large diamond--left next-diamond--small next-diamond--right">
             <img src="{{ url('theme://images/logo.png') }}" alt="La boite à cycler">
             <div>
                 <h1>
@@ -20,7 +20,7 @@
             </div>
         </div>
 
-        <div class="diamond" id="evenements">
+        <div class="diamond diamond--small diamond--right previous-diamond--left previous-diamond--large next-diamond--center next-diamond--small">
             <div class="event">
                 <em>Prochain événement</em>
                 <h2 class="event-name">Atelier vélo</h2>
@@ -49,7 +49,7 @@
 
 <footer>
     <div class="container">
-        <div class="diamond diamond--large">
+        <div class="diamond diamond--large diamond--right previous-diamond--large previous-diamond--left">
             <div class="row">
                 {% for column in page.header.footer_columns %}
                 <div class="col">

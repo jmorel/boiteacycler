@@ -16,6 +16,10 @@ form:
                             name: background
                             type: file
                             label: Background
+                            multiple: false
+                            accept:
+                                - image/*
+                            destination: 'page@:/images'
                         header.size:
                             name: size
                             type: select
