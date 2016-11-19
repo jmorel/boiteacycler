@@ -106,7 +106,7 @@
 }
 
 .diamond-top-large-to-small(@edge-position) when (@edge-position = 'left') {
-    ._diamond-top(@large-to-small-short-length, @large-to-small-long-length);
+    ._diamond-top(@small-to-large-short-length, @small-to-large-long-length);
 }
 
 .diamond-top-large-to-large(@edge-position) when (@edge-position = 'right') {
@@ -118,7 +118,7 @@
 }
 
 .diamond-top-small-to-large(@edge-position) when (@edge-position = 'right') {
-    ._diamond-top(@small-to-large-long-length, @small-to-large-short-length);
+    ._diamond-top(@large-to-small-long-length, @large-to-small-short-length);
 }
 
 .diamond-top-small-to-large(@edge-position) when (@edge-position = 'left') {
