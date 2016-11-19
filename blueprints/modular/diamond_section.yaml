@@ -21,13 +21,84 @@ form:
                             type: select
                             label: Size
                             options:
-                                'diamond--normal': Normal
-                                'diamond--large': Large
+                                small: Normal
+                                large: Large
                         header.position:
                             name: position
                             type: select
                             label: Position
                             options:
-                                'diamond--left': Left
-                                'diamond--center': Center
-                                'diamond--right': Right
+                                left: Left
+                                center: Center
+                                right: Right
+                        header.previous_position:
+                            name: previous_position
+                            type: select
+                            label: Previous diamond's position
+                            options:
+                                left: Left
+                                center: Center
+                                right: Right
+                        header.previous_size:
+                            name: previous_size
+                            type: select
+                            label: Previous diamond's size
+                            options:
+                                small: Normal
+                                large: Large
+                        header.next_position:
+                            name: next_position
+                            type: select
+                            label: Next diamond's position
+                            options:
+                                left: Left
+                                center: Center
+                                right: Right
+                        header.next_size:
+                            name: next_size
+                            type: select
+                            label: Next diamond's size
+                            options:
+                                small: Normal
+                                large: Large
+                        header.newsletter:
+                            name: newsletter
+                            type: toggle
+                            toggleable: true
+                            options:
+                                1: activated
+                                0: deactivated
+                questions:
+                    type: tab
+                    title: Questions
+                    fields:
+                        header.questions:
+                            name: questions
+                            type: list
+                            label: Questions
+                            style: vertical
+
+                            fields:
+                                .question:
+                                    type: text
+                                    label: Question
+                                .answer:
+                                    type: textarea
+                                    label: Réponse
+                quotes:
+                    type: tab
+                    title: Quotes
+                    fields:
+                        header.quotes:
+                            name: quotes
+                            type: list
+                            label: Quotes
+                            style: vertical
+
+                            fields:
+                                .quote:
+                                    type: textarea
+                                    label: Quote
+                                .author:
+                                    type: text
+                                    label: Author

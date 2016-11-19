@@ -20,6 +20,10 @@ form:
                             name: events_call_to_action
                             type: markdown
                             label: Events call to action
+                        header.header_calendar_url:
+                            name: calendar_url
+                            type: text
+                            label: URL for the calendar page (will be included through an iframe)
                 footer:
                     type: tab
                     title: Footer

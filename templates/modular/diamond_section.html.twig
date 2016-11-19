@@ -1,6 +1,30 @@
-<section id="">
-    <div class="diamond {{ page.header.position }} {{ page.header.size }}">
-        <h2>{{ page.title }}</h2>
-        {{ content }}
+<section id="{{ page.menu }}">
+    <div class="container">
+        <div class="diamond diamond--{{ page.header.position }} diamond--{{ page.header.size }} previous-diamond--{{ page.header.previous_position }} previous-diamond--{{ page.header.previous_size }} next-diamond--{{ page.header.next_size}} next-diamond--{{ page.header.next_position }}">
+            <h2>{{ page.title }}</h2>
+
+            {{ content }}
+
+            {% if page.header.newsletter %}
+            <form>
+                <input type="text" placeholder="Votre adresse email">
+                <button type="submit">S'abonner</button>
+            </form>
+            {% endif %}
+
+            {% for question in page.header.questions %}
+                <h3>{{ question.question }}</h3>
+                <p>{{ question.answer }}</p>
+            {% endfor %}
+
+            {% for quote in page.header.quotes %}
+                <figure class="quote">
+                    <blockquote>
+                        {{ quote.quote }}
+                    </blockquote>
+                    <figcaption>{{ quote.author }}</figcaption>
+                </figure>
+            {% endfor %}
+        </div>
     </div>
 </section>
