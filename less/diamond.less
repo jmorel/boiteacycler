@@ -1,5 +1,3 @@
-@import "variables";
-
 // INTERNAL
 
 @small-to-small-short-length: @section-width - (@container-width+@section-width)/4;
@@ -118,7 +116,9 @@
 }
 
 .diamond-top-small-to-large(@edge-position) when (@edge-position = 'right') {
-    ._diamond-top(@large-to-small-long-length, @large-to-small-short-length);
+    @media (min-width: @screen-sm-min) {
+        ._diamond-top(@large-to-small-long-length, @large-to-small-short-length);
+    }
 }
 
 .diamond-top-small-to-large(@edge-position) when (@edge-position = 'left') {
@@ -126,9 +126,13 @@
 }
 
 .diamond-top-small-to-small(@edge-position) when (@edge-position = 'right') {
-    ._diamond-top(@small-to-small-long-length, @small-to-small-short-length);
+    @media (min-width: @screen-sm-min) {
+        ._diamond-top(@small-to-small-long-length, @small-to-small-short-length);
+    }
 }
 
 .diamond-top-small-to-small(@edge-position) when (@edge-position = 'left') {
-    ._diamond-top(@small-to-small-short-length, @small-to-small-long-length);
+    @media (min-width: @screen-sm-min) {
+        ._diamond-top(@small-to-small-short-length, @small-to-small-long-length);
+    }
 }

@@ -10,6 +10,10 @@
                     {{ page.header.header_tagline }}
                 </h1>
                 <nav>
+                    <img src="{{ url('theme://images/logo.png') }}" alt="La boite à cycler">
+                    <button>
+                        <i class="fa fa-hamburger" aria-hidden="true"></i>
+                    </button>
                     <ul>
                         {% for section in page.collection %}
                         <li>

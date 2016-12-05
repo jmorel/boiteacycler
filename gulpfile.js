@@ -11,9 +11,9 @@ gulp.task('default', ['watch']);
 
 gulp.task('less', function () {
     return gulp.src('./less/*.less')
+        .pipe(concat('boiteacycler.less'))
         .pipe(less())
         .pipe(autoprefixer())
-        .pipe(concat('boiteacycler.css'))
         .pipe(cleanCSS())
         .pipe(rename({
             suffix: '.min'

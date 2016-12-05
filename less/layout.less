@@ -1,6 +1,3 @@
-@import "variables";
-@import "diamond";
-
 body {
     margin: 0;
     padding: 0;
@@ -21,7 +18,10 @@ header {
 
 header .diamond:first-child {
     margin-bottom: 2*@spacing;
-    height: @banner-height - @spacing;
+
+    @media (min-width: @screen-sm-min) {
+        height: @banner-height - @spacing;
+    }
 }
 
 header .diamond:last-child {
@@ -29,17 +29,22 @@ header .diamond:last-child {
 }
 
 header img {
-    position: absolute;
-    left: 0;
-    top: -40px;
+    @media (min-width: @screen-sm-min) {
+        position: absolute;
+        left: 0;
+        top: -40px;
+    }
 }
 
 header h1 {
     margin: 0;
-    position: absolute;
-    right: @spacing;
-    bottom: 0;
     background-color: rgba(255, 255, 255, 0.9);
+
+    @media (min-width: @screen-sm-min) {
+        position: absolute;
+        right: @spacing;
+        bottom: 0;
+    }
 }
 
 section {
@@ -53,8 +58,23 @@ footer {
 }
 
 .container {
-    width: @container-width;
     margin: 0 auto;
+
+    @media (max-width: @screen-xs-max) {
+        width: @container-xs-width;
+    }
+    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+        width: @container-sm-width;
+    }
+    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+        width: @container-md-width;
+    }
+    @media (min-width: @screen-lg-min) and (max-width: @screen-lg-max) {
+        width: @container-lg-width;
+    }
+    @media (min-width: @screen-xl-min) {
+        width: @container-xl-width;
+    }
 }
 
 .diamond {
@@ -64,25 +84,50 @@ footer {
 // Size
 
 .diamond--small {
-    width: @section-width;
+    @media (max-width: @screen-xs-max) {
+        width: @section-xs-width;
+    }
+    @media (min-width: @screen-sm-min) {
+        width: @section-width;
+    }
 }
 
 .diamond--large {
-    width: 2 * @section-width;
+    @media (max-width: @screen-xs-max) {
+        width: @section-xs-width;
+    }
+    @media (min-width: @screen-sm-min) {
+        width: 2 * @section-width;
+    }
 }
 
 // Position
 
 .diamond--left {
-    .diamond-body('left');
+    @media (max-width: @screen-xs-max) {
+        .diamond-body('center');
+    }
+    @media (min-width: @screen-sm-min) {
+        .diamond-body('left');
+    }
 }
 
 .diamond--center {
-    .diamond-body('center');
+    @media (max-width: @screen-xs-max) {
+        .diamond-body('center');
+    }
+    @media (min-width: @screen-sm-min) {
+        .diamond-body('center');
+    }
 }
 
 .diamond--right {
-    .diamond-body('right');
+    @media (max-width: @screen-xs-max) {
+        .diamond-body('center');
+    }
+    @media (min-width: @screen-sm-min) {
+        .diamond-body('right');
+    }
 }
 
 // Top
