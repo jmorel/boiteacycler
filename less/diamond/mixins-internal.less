@@ -1,0 +1,40 @@
+._diamond-edge(@border-left-width, @border-right-width) {
+    display: block;
+    content: '';
+    height: @spacing;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    border-style: solid;
+    border-left-width: @border-left-width;;
+    border-right-width: @border-right-width;
+}
+
+._diamond-top(@border-left-width, @border-right-width) {
+    &:before {
+        ._diamond-edge(@border-left-width, @border-right-width);
+        border-top-width: 0;
+        border-bottom-width: @spacing;
+        top: -@spacing;
+        border-color: transparent transparent @color-white transparent;
+    }
+}
+
+._diamond-bottom(@border-left-width, @border-right-width) {
+    &:after {
+        ._diamond-edge(@border-left-width, @border-right-width);
+        border-bottom-width: 0;
+        border-top-width: @spacing;
+        bottom: -@spacing;
+        border-color: @color-white transparent transparent transparent;
+    }
+}
+
+// BODY
+
+
+// BOTTOM
+
+
+// TOP
+

@@ -1,0 +1,38 @@
+.container {
+    margin: 0 auto;
+
+    @media (max-width: @screen-xs-max) {
+        width: @container-xs-width;
+    }
+    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+        width: @container-sm-width;
+    }
+    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+        width: @container-md-width;
+    }
+    @media (min-width: @screen-lg-min) {
+        width: @container-lg-width;
+    }
+}
+
+.diamond {
+    padding: @spacing;
+}
+
+.diamond.diamond--small {
+    @media (max-width: @screen-xs-max) {
+        width: @section-xs-width;
+    }
+    @media (min-width: @screen-sm-min) {
+        width: @section-sm-width;
+    }
+}
+
+.diamond.diamond--large {
+    @media (max-width: @screen-xs-max) {
+        width: @section-xs-width;
+    }
+    @media (min-width: @screen-sm-min) {
+        width: 2 * @section-sm-width;
+    }
+}

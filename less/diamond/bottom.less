@@ -1,0 +1,34 @@
+// small-to-small
+
+.diamond--small.next-diamond--small.diamond--left.next-diamond--center,
+.diamond--small.next-diamond--small.diamond--center.next-diamond--right {
+    .diamond-bottom-small-to-small('right');
+}
+
+.diamond--small.next-diamond--small.diamond--left.next-diamond--left,
+.diamond--small.next-diamond--small.diamond--center.next-diamond--center,
+.diamond--small.next-diamond--small.diamond--right.next-diamond--right {
+    .diamond-bottom-small-to-small('center');
+}
+
+.diamond--small.next-diamond--small.diamond--center.next-diamond--left,
+.diamond--small.next-diamond--small.diamond--right.next-diamond--center {
+    .diamond-bottom-small-to-small('left');
+}
+
+// large-to-small
+
+.diamond--large.next-diamond--small.diamond--left.next-diamond--right {
+    .diamond-bottom-large-to-small('right');
+}
+
+// large-to-large
+
+.diamond--large.next-diamond--large.diamond--left.next-diamond--right {
+    .diamond-bottom-large-to-large('right');
+}
+
+// small to large
+.diamond--small.next-diamond--large.diamond--right.next-diamond--left {
+    .diamond-bottom-small-to-large('left');
+}

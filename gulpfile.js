@@ -10,7 +10,7 @@ var rename = require('gulp-rename');
 gulp.task('default', ['watch']);
 
 gulp.task('less', function () {
-    return gulp.src('./less/*.less')
+    return gulp.src('./less/**/*.less')
         .pipe(concat('boiteacycler.less'))
         .pipe(less())
         .pipe(autoprefixer())
@@ -22,5 +22,5 @@ gulp.task('less', function () {
 });
 
 gulp.task('watch', function () {
-    return gulp.watch('./less/*.less', ['less'])
+    return gulp.watch('./less/**/*.less', ['less'])
 });

@@ -1,0 +1,21 @@
+.diamond.diamond--left {
+    @media (max-width: @screen-xs-max) {
+        .diamond-body('center');
+    }
+    @media (min-width: @screen-sm-min) {
+        .diamond-body('left');
+    }
+}
+
+.diamond.diamond--center {
+    .diamond-body('center');
+}
+
+.diamond--right {
+    @media (max-width: @screen-xs-max) {
+        .diamond-body('center');
+    }
+    @media (min-width: @screen-sm-min) {
+        .diamond-body('right');
+    }
+}

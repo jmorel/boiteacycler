@@ -1,0 +1,19 @@
+.diamond-body(@position: 'left') when (@position = 'left') {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.diamond-body(@position: 'left') when (@position = 'center') {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.diamond-body(@position: 'left') when (@position = 'right') {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.diamond-body(@position: 'left') {
+    background-color: @color-white;
+    position: relative;
+}

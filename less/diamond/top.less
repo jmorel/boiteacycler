@@ -1,0 +1,56 @@
+// small-to-small
+
+.diamond--small.previous-diamond--small.diamond--center.previous-diamond--left,
+.diamond--small.previous-diamond--small.diamond--right.previous-diamond--center {
+    .diamond-top-small-to-small('left');
+}
+
+.diamond--small.previous-diamond--small.diamond--left.previous-diamond--left,
+.diamond--small.previous-diamond--small.diamond--center.previous-diamond--center,
+.diamond--small.previous-diamond--small.diamond--right.previous-diamond--right {
+    .diamond-top-small-to-small('center');
+}
+
+.diamond--small.previous-diamond--small.diamond--center.previous-diamond--right,
+.diamond--small.previous-diamond--small.diamond--left.previous-diamond--center {
+    .diamond-top-small-to-small('right');
+}
+
+// large-to-small
+
+.diamond--small.previous-diamond--large.diamond--right.previous-diamond--left {
+    .diamond-top-large-to-small('left');
+}
+
+.diamond--small.previous-diamond--large.diamond--left.previous-diamond--left,
+.diamond--small.previous-diamond--large.diamond--center.previous-diamond--center,
+.diamond--small.previous-diamond--large.diamond--right.previous-diamond--right {
+    .diamond-top-large-to-small('center');
+}
+
+.diamond--small.previous-diamond--large.diamond--center.previous-diamond--right,
+.diamond--small.previous-diamond--large.diamond--left.previous-diamond--center {
+    .diamond-top-large-to-small('right');
+}
+
+// large-to-large
+
+.diamond--large.previous-diamond--large.diamond--right.previous-diamond--left {
+    .diamond-top-large-to-large('left');
+}
+
+.diamond--large.previous-diamond--large.diamond--left.previous-diamond--left,
+.diamond--large.previous-diamond--large.diamond--center.previous-diamond--center,
+.diamond--large.previous-diamond--large.diamond--right.previous-diamond--right {
+    .diamond-top-large-to-large('center');
+}
+
+.diamond--large.previous-diamond--large.diamond--left.previous-diamond--right {
+    .diamond-top-large-to-large('right');
+}
+
+// small to large
+
+.diamond--large.previous-diamond--small.diamond--left.previous-diamond--right {
+    .diamond-top-small-to-large('right');
+}

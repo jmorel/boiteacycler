@@ -1,0 +1,55 @@
+// large -> small
+
+.diamond-top-large-to-small(@edge-position) when (@edge-position = 'right') {
+    ._diamond-top(@large-to-small-long-sm-length, @large-to-small-short-sm-length);
+}
+
+.diamond-top-large-to-small(@edge-position) when (@edge-position = 'left') {
+    ._diamond-top(@small-to-large-short-sm-length, @small-to-large-long-sm-length);
+}
+
+// large -> large
+
+.diamond-top-large-to-large(@edge-position) when (@edge-position = 'right') {
+    ._diamond-top(@large-to-large-long-sm-length, @large-to-large-short-sm-length);
+}
+
+.diamond-top-large-to-large(@edge-position) when (@edge-position = 'left') {
+    ._diamond-top(@large-to-large-short-sm-length, @large-to-large-long-sm-length);
+}
+
+// small -> large
+
+.diamond-top-small-to-large(@edge-position) when (@edge-position = 'right') {
+    ._diamond-top(@large-to-small-long-sm-length, @large-to-small-short-sm-length);
+}
+
+.diamond-top-small-to-large(@edge-position) when (@edge-position = 'left') {
+    ._diamond-top(@small-to-large-short-sm-length, @small-to-large-long-sm-length);
+}
+
+// small -> small
+
+.diamond-top-small-to-small(@edge-position) when (@edge-position = 'right') {
+    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+        ._diamond-top(@small-to-small-long-sm-length, @small-to-small-short-sm-length);
+    }
+    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+        ._diamond-top(@small-to-small-long-md-length, @small-to-small-short-md-length);
+    }
+    @media (min-width: @screen-lg-min) {
+        ._diamond-top(@small-to-small-long-lg-length, @small-to-small-short-lg-length);
+    }
+}
+
+.diamond-top-small-to-small(@edge-position) when (@edge-position = 'left') {
+    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+        ._diamond-top(@small-to-small-short-sm-length, @small-to-small-long-sm-length);
+    }
+    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+        ._diamond-top(@small-to-small-short-md-length, @small-to-small-long-md-length);
+    }
+    @media (min-width: @screen-lg-min) {
+        ._diamond-top(@small-to-small-short-lg-length, @small-to-small-long-lg-length);
+    }
+}
