@@ -5,7 +5,7 @@
         <div class="diamond-container">
             <div class="diamond diamond--large diamond--left next-diamond--large next-diamond--right">
                 <a href="/" class="home-link">
-                    <img src="{{ url('theme://images/logo.png') }}" alt="La boite à cycler">
+                    <img src="{{ url('theme://images/logo.png') }}" alt="La boite à cycler" class="logo">
                 </a>
                 <div>
                     <h1>
@@ -16,11 +16,13 @@
         </div>
     </header>
 
-    <div class="diamond-container">
-        <div class="diamond diamond--large diamond--right previous-diamond--large previous-diamond--left next-diamond--large next-diamond--left">
-            {{ content }}
+    <section>
+        <div class="diamond-container">
+            <div class="diamond diamond--large diamond--right previous-diamond--large previous-diamond--left next-diamond--large next-diamond--left">
+                {{ content }}
+            </div>
         </div>
-    </div>
+    </section>
 
     <footer>
         <div class="diamond-container">

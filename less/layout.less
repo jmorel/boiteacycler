@@ -12,23 +12,9 @@ footer {
 
 }
 
-header {
-    padding-bottom: @spacing;
-}
+.home-link {
+    display: inline-block;
 
-header .diamond:first-child {
-    margin-bottom: 2*@spacing;
-
-    @media (min-width: @screen-sm-min) {
-        height: @banner-height - @spacing;
-    }
-}
-
-header .diamond:not(:first-child):last-child {
-    margin-top: 2*@spacing;
-}
-
-header img {
     @media (min-width: @screen-sm-min) {
         position: absolute;
         left: 0;
@@ -36,15 +22,24 @@ header img {
     }
 }
 
-header h1 {
-    margin: 0;
-    background-color: rgba(255, 255, 255, 0.9);
+.logo {
+}
+
+header .diamond:first-child {
 
     @media (min-width: @screen-sm-min) {
-        position: absolute;
-        right: @spacing;
-        bottom: 0;
+        height: @banner-height - @spacing;
     }
+}
+
+.modular-home-header {
+    .diamond:first-child {
+        margin-bottom: 2*@spacing;
+    }
+}
+
+header {
+    padding-bottom: @spacing;
 }
 
 section {
@@ -54,5 +49,4 @@ section {
 footer {
     padding-top: @spacing;
     font-size: 0.8em;
-
 }
