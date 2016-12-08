@@ -4,12 +4,13 @@ nav {
     left: 0;
     right: 0;
     z-index: 100;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     background-color: @color-white;
-    box-shadow: 0 3px 3px @color-gray;
+}
 
-    @media (max-width: @screen-xs-max) {
-        text-align: center;
-    }
+nav .diamond-container {
+    background-color: @color-white;
 }
 
 nav ul {
@@ -26,10 +27,11 @@ nav a {
     padding: 0.33em 1em;
     text-decoration: none;
     color: inherit;
-    border-bottom: 5px solid transparent;
 
-    &:hover {
-        border-bottom-color: @color-primary;
+    &:hover,
+    &.active {
+        background-color: @color-primary;
+        transition: background-color 300ms;
     }
 }
 

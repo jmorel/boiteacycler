@@ -13,7 +13,7 @@
 
         {% block stylesheets %}
             {% do assets.addCss('theme://vendor/Font-Awesome/css/font-awesome.min.css', 99) %}
-            {% do assets.addCss('theme://vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css', 98) %}
+            {#{% do assets.addCss('theme://vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css', 98) %}#}
 
             {% do assets.addCss('theme://css-compiled/boiteacycler.min.css', 0) %}
         {% endblock stylesheets %}
@@ -28,7 +28,8 @@
 {% endblock content %}
 
 {% block scripts %}
-    {% do assets.addJs('theme://vendor/bootstrap-3.3.7-dist/js/bootstrap.min.js') %}
+    {% do assets.addJs('theme://js/nav.js') %}
+    {#{% do assets.addJs('theme://vendor/bootstrap-3.3.7-dist/js/bootstrap.min.js') %}#}
 {% endblock scripts %}
 
 {{ assets.js() }}
