@@ -9,3 +9,21 @@ author:
 homepage: https://github.com/jmorel/boiteacycler
 bugs: https://github.com/jmorel/boiteacycler/issues
 license: MIT
+
+form:
+  fields:
+    tagline:
+      name: tagline
+      type: text
+      label: Tagline
+    footer_columns:
+      name: columns
+      type: list
+      label: Columns
+      style: vertical
+
+      fields:
+          .content:
+              name: content
+              type: markdown
+              label: Content

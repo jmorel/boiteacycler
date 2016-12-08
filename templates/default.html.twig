@@ -1,1 +1,38 @@
 {% extends "partials/base.html.twig" %}
+
+{% block content %}
+    <header>
+        <div class="diamond-container">
+            <div class="diamond diamond--large diamond--left next-diamond--large next-diamond--right">
+                <a href="/" class="home-link">
+                    <img src="{{ url('theme://images/logo.png') }}" alt="La boite à cycler">
+                </a>
+                <div>
+                    <h1>
+                        {{ theme_config.tagline }}
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="diamond-container">
+        <div class="diamond diamond--large diamond--right previous-diamond--large previous-diamond--left next-diamond--large next-diamond--left">
+            {{ content }}
+        </div>
+    </div>
+
+    <footer>
+        <div class="diamond-container">
+            <div class="diamond diamond--large diamond--left previous-diamond--large previous-diamond--right">
+                <div class="row">
+                    {% for column in theme_config.footer_columns %}
+                        <div class="col">
+                            {{ column.content | markdown }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock content %}

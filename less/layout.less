@@ -24,7 +24,7 @@ header .diamond:first-child {
     }
 }
 
-header .diamond:last-child {
+header .diamond:not(:first-child):last-child {
     margin-top: 2*@spacing;
 }
 

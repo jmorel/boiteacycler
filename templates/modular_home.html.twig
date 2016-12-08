@@ -2,9 +2,11 @@
 
 {% block content %}
 <header>
-    <div class="container">
+    <div class="diamond-container">
         <div class="diamond diamond--large diamond--left next-diamond--small next-diamond--right">
-            <img src="{{ url('theme://images/logo.png') }}" alt="La boite à cycler">
+            <a href="/" class="home-link">
+                <img src="{{ url('theme://images/logo.png') }}" alt="La boite à cycler">
+            </a>
             <div>
                 <h1>
                     {{ page.header.header_tagline }}
@@ -52,10 +54,10 @@
 {% endfor %}
 
 <footer>
-    <div class="container">
+    <div class="diamond-container">
         <div class="diamond diamond--large diamond--right previous-diamond--large previous-diamond--left">
             <div class="row">
-                {% for column in page.header.footer_columns %}
+                {% for column in theme_config.footer_columns %}
                 <div class="col">
                     {{ column.content | markdown }}
                 </div>

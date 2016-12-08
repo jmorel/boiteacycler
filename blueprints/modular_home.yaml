@@ -12,10 +12,6 @@ form:
                     type: tab
                     title: Header
                     fields:
-                        header.header_tagline:
-                            name: tagline
-                            type: text
-                            label: Tagline
                         header.header_events_call_to_action:
                             name: events_call_to_action
                             type: markdown
@@ -24,18 +20,3 @@ form:
                             name: calendar_url
                             type: text
                             label: URL for the calendar page (will be included through an iframe)
-                footer:
-                    type: tab
-                    title: Footer
-                    fields:
-                        header.footer_columns:
-                            name: columns
-                            type: list
-                            label: Columns
-                            style: vertical
-
-                            fields:
-                                .content:
-                                    name: content
-                                    type: markdown
-                                    label: Content
