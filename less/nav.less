@@ -1,16 +1,33 @@
 nav {
     position: fixed;
     top: 0;
-    left: 0;
-    right: 0;
     z-index: 100;
     text-align: center;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     background-color: @color-white;
+    min-height: @spacing;
+
+    @media (max-width: @screen-md-max) {
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        left: 0;
+        right: 0;
+    }
+
+    @media (min-width: @screen-lg-min) {
+        width: @container-lg-width;
+        left: 50%;
+        margin-left: -@container-lg-width/2;
+    }
 }
 
-nav .diamond-container {
-    background-color: @color-white;
+.nav--wide {
+    @media (min-width: @screen-lg-min) {
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        left: 0;
+        right: 0;
+        width: 100%;
+        margin-left: 0;
+        transition: box-shadow 300ms;
+    }
 }
 
 nav ul {
