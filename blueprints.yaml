@@ -12,6 +12,10 @@ license: MIT
 
 form:
   fields:
+    google_webmaster_tools_id:
+      name: google_webmaster_tools_id
+      type: text
+      label: Google Webmaster tools ID
     tagline:
       name: tagline
       type: text

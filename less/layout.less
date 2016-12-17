@@ -15,7 +15,14 @@ footer {
 .home-link {
     display: inline-block;
 
-    @media (min-width: @screen-sm-min) {
+    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 80%;
+
+    }
+    @media (min-width: @screen-md-min) {
         position: absolute;
         left: 0;
         top: -40px;
@@ -23,6 +30,7 @@ footer {
 }
 
 .logo {
+    max-width: 100%;
 }
 
 header .diamond:first-child {
