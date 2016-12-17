@@ -14,10 +14,8 @@
         <meta name="google-site-verification" content="{{ theme_config.google_webmaster_tools_id }}" />
 
         {% block stylesheets %}
-            {% do assets.addCss('theme://vendor/Font-Awesome/css/font-awesome.min.css', 99) %}
+            {% do assets.addCss('theme://vendor/Font-Awesome-4.7.0/css/font-awesome.min.css', 99) %}
             {% do assets.addCss('theme://vendor/normalize.css-5.0.0/normalize.css', 98) %}
-            {#{% do assets.addCss('theme://vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css', 98) %}#}
-
             {% do assets.addCss('theme://css-compiled/boiteacycler.min.css', 0) %}
         {% endblock stylesheets %}
 
@@ -33,7 +31,6 @@
 {% block scripts %}
     {% do assets.addJs('theme://js/nav.js') %}
     {% do assets.addJs('theme://js/mailinglist.js') %}
-    {#{% do assets.addJs('theme://vendor/bootstrap-3.3.7-dist/js/bootstrap.min.js') %}#}
 {% endblock scripts %}
 
 {{ assets.js() }}
