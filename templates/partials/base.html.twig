@@ -11,7 +11,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <meta name="google-site-verification" content="0CY7SekIV4chY46zydcRPoV0Da0hNKiHEfIwndFuqx8" />
+        <meta name="google-site-verification" content="{{ theme_config.google_webmaster_tools_id }}" />
 
         {% block stylesheets %}
             {% do assets.addCss('theme://vendor/Font-Awesome/css/font-awesome.min.css', 99) %}
@@ -31,6 +31,7 @@
 
 {% block scripts %}
     {% do assets.addJs('theme://js/nav.js') %}
+    {% do assets.addJs('theme://js/mailinglist.js') %}
     {#{% do assets.addJs('theme://vendor/bootstrap-3.3.7-dist/js/bootstrap.min.js') %}#}
 {% endblock scripts %}
 

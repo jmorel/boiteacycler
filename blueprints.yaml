@@ -16,6 +16,10 @@ form:
       name: google_webmaster_tools_id
       type: text
       label: Google Webmaster tools ID
+    mailinglist_subscribe_url:
+      name: mailinglist_subscribe_url
+      type: text
+      label: Mailing list subscribe URL
     tagline:
       name: tagline
       type: text

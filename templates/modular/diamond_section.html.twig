@@ -1,3 +1,5 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+
 <section id="{{ page.menu }}" style="background-image: url('{{ page.media[page.header.background].url }}')">
     <div class="diamond-container">
         <div class="diamond diamond--{{ page.header.position }} diamond--{{ page.header.size }} previous-diamond--{{ page.header.previous_position }} previous-diamond--{{ page.header.previous_size }} next-diamond--{{ page.header.next_size}} next-diamond--{{ page.header.next_position }}">
@@ -6,10 +8,28 @@
             {{ content }}
 
             {% if page.header.newsletter %}
-            <form>
-                <input type="text" placeholder="Votre adresse email">
-                <button type="submit">S'abonner</button>
+            <form id="mailinglist-form" action="{{ theme_config.mailinglist_subscribe_url }}">
+                <input type="email"
+                       placeholder="Votre adresse email"
+                        required>
+                <button type="submit">
+                    <span id="mailinglist-button-label-normal">S'abonner</span>
+                    <span id="mailinglist-button-label-pending">
+                        <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+                        Inscription en cours...
+                    </span>
+                </button>
             </form>
+            <p id="mailinglist-error" class="status-message status-message--error">
+                <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                Nous n'avons pas pu vous inscrire à la mailing list. <br>
+                <a href="mailto:contact@laboiteacycler.org">Ecrivez-nous</a> et nous vous inscrirons manuellement.
+            </p>
+            <p id="mailinglist-success" class="status-message status-message--success">
+                <i class="fa fa-check" aria-hidden="true"></i>
+                Nous venons de vous envoyer un email contenant un lien de validation. <br>
+                Cliquez sur ce lien pour activer votre abonnement !
+            </p>
             {% endif %}
 
             {% for question in page.header.questions %}

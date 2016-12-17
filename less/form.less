@@ -21,3 +21,26 @@ button {
         background-color: @color-lightergray;
     }
 }
+
+.status-message {
+    border-width: 1px;
+    border-style: solid;
+    padding: 20px;
+    display: none;
+}
+
+.status-message.status-message--error {
+    border-color: @color-red;
+
+    i.fa {
+        color: @color-red;
+    }
+}
+
+.status-message.status-message--success {
+    border-color: @color-green;
+
+    i.fa {
+        color: @color-green;
+    }
+}
