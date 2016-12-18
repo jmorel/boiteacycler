@@ -21,14 +21,14 @@
             offsetTop: sectionElement.offsetTop
         });
     }
-    
+
     var setCurrentNavItem = function (sectionElement) {
         for (i=0; i < sectionElements.length; i++) {
             sectionElements[i].navElement.classList.remove('active');
         }
         sectionElement.navElement.classList.add('active');
     };
-    
+
     var updateNavBar = function () {
         if (window.scrollY === 0 && navElement.classList.contains('nav--wide')) {
             navElement.classList.remove('nav--wide');
@@ -47,6 +47,6 @@
     };
 
     window.addEventListener('scroll', updateNavBar);
-    
+
     updateNavBar();
 }());

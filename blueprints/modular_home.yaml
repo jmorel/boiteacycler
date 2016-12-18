@@ -20,3 +20,11 @@ form:
                             name: calendar_url
                             type: text
                             label: URL for the calendar page (will be included through an iframe)
+                        header.header_calendar_id:
+                            name: calendar_id
+                            type: text
+                            label: Google calendar's ID
+                        header.header_google_api_key:
+                            name: google_api_key
+                            type: text
+                            label: Google developer API key

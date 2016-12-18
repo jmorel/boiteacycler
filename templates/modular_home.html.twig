@@ -34,22 +34,28 @@
                  id="prochain-evenement">
                 <div class="event">
                     <em>Prochain événement</em>
-                    <h2 class="event-name">Atelier vélo</h2>
+                    <h2 class="event-name"></h2>
                     <p>
-                        Le <span class="event-date">dimanche 23 octobre de 11h à 13h</span>
-                        <span class="event-location">devant la médiathèque de Viroflay</span>
+                        Le <span class="event-date"></span>, <span class="event-location"></span>
                     </p>
                     <p class="event-links">
-                        <a href="#" class="event-link"><i class="fa fa-fw fa-map-marker"></i>plan</a>
-                        <a href="#" class="event-link"><i class="fa fa-fw fa-calendar"></i>ajouter à mon calendrier</a>
+                        <a href="#" class="event-link event-link--map"><i class="fa fa-fw fa-map-marker"></i>plan</a>
+                        <a href="#" class="event-link event-link--calendar"><i class="fa fa-fw fa-calendar"></i>ajouter à mon calendrier</a>
                     </p>
+                </div>
+                <div class="loading-event">
+                    <i class="fa fa-spinner fa-spin"></i>
+                    Chargement du prochain événement...
                 </div>
                 <p>
                     {{ page.header.header_events_call_to_action | markdown }}
                 </p>
 
                 <h2>Tous les événements à venir</h2>
-                <iframe src="{{ page.header.header_calendar_url }}" width="100%" height="300" frameborder="0"
+                <iframe src="{{ page.header.header_calendar_url }}"
+                        width="100%"
+                        height="300"
+                        frameborder="0"
                         scrolling="no"></iframe>
             </div>
         </div>
@@ -72,4 +78,11 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        (function () {
+            window.GOOGLE_CALENDAR_ID = '{{ page.header.header_calendar_id }}';
+            window.GOOGLE_API_KEY = '{{ page.header.header_google_api_key }}';
+        }());
+    </script>
 {% endblock content %}
