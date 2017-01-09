@@ -42,23 +42,35 @@
 
                 if (response.items.length > 0) {
                     var event = response.items[0];
+                    
                     // event name
-                    eventNameElement.textContent = event.summary;
+                    if (event.visibility === 'private') {
+                        eventNameElement.textContent = 'Occupé(e)';
+                    } else {
+                        eventNameElement.textContent = event.summary;
+                    }
+                    
                     // event date
                     moment.locale('fr');
                     var date = moment(event.start.dateTime);
                     eventDateElement.textContent = date.format('dddd D MMMM [à] H[h]mm');
+                    
                     // event location
                     var location = event.location;
-                    location = location[0].toLowerCase() + location.slice(1, location.length);
-                    if ('.?!'.search(location[location.length - 1]) == -1) {
-                        location += '.';
+                    if (location) {
+                        location = location[0].toLowerCase() + location.slice(1, location.length);
+                        if ('.?!'.search(location[location.length - 1]) == -1) {
+                            location += '.';
+                        }
+                        eventLocationElement.textContent = location;
                     }
-                    eventLocationElement.textContent = location;
+                    
                     // map link
                     eventMapLinkElement.href = MAP_URL + encodeURIComponent(event.location);
+                    
                     // calendar link
                     eventCalendarLinkElement.href = event.htmlLink;
+                        
                 } else {
                     eventNameElement.textContent = 'Pas d\'événement planifié actuellement :(';
                     var paragraphs = document.querySelectorAll('.event > p');
