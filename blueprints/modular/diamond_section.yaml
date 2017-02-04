@@ -13,15 +13,12 @@ form:
                     title: Layout options
                     fields:
                         header.background:
-                            name: background
-                            type: filepicker
-                            label: Background
-                            preview_images: true
-#                            multiple: false
-#                            destination: 'self@'
-                            folder: '@self'
-#                            accept:
-#                                - image/*
+                            type: file
+                            label: Custom Logo Login Screen
+                            destination: '@self'
+                            accept:
+                                - image/*
+                            multiple: false
                         header.size:
                             name: size
                             type: select
