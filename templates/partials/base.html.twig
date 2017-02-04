@@ -32,8 +32,9 @@
 {% block scripts %}
     {% do assets.addJs('theme://vendor/moment-2.17.1/min/moment.min.js') %}
     {% do assets.addJs('theme://vendor/moment-2.17.1/locale/fr.js') %}
+    {% do assets.addJs('theme://vendor/emailjs-smtp-client-1.0.0/src/emailjs-smtp-client-response-parser.js') %}
+    {% do assets.addJs('theme://vendor/emailjs-smtp-client-1.0.0/src/emailjs-smtp-client.js') %}
     {% do assets.addJs('theme://js/nav.js') %}
-    {% do assets.addJs('theme://js/mailinglist.js') %}
     {% do assets.addJs('theme://js/calendar.js') %}
 {% endblock scripts %}
 

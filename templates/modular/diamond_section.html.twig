@@ -1,35 +1,32 @@
 {% set theme_config = attribute(config.themes, config.system.pages.theme) %}
 
-<section id="{{ page.menu }}" style="background-image: url('{{ page.media[page.header.background].url }}')">
+<section id="{{ page.menu }}" style="background-image: url('{{ page.url }}/{{ page.header.background }}')">
     <div class="diamond-container">
-        <div class="diamond diamond--{{ page.header.position }} diamond--{{ page.header.size }} previous-diamond--{{ page.header.previous_position }} previous-diamond--{{ page.header.previous_size }} next-diamond--{{ page.header.next_size}} next-diamond--{{ page.header.next_position }}">
+        <div class="diamond diamond--{{ page.header.position }} diamond--{{ page.header.size }} previous-diamond--{{ page.header.previous_position }} previous-diamond--{{ page.header.previous_size }} next-diamond--{{ page.header.next_size }} next-diamond--{{ page.header.next_position }}">
             <h2>{{ page.title }}</h2>
 
             {{ content }}
 
             {% if page.header.newsletter %}
-            <form id="mailinglist-form" action="{{ theme_config.mailinglist_subscribe_url }}">
-                <input type="email"
-                       placeholder="Votre adresse email"
-                        required>
-                <button type="submit">
-                    <span id="mailinglist-button-label-normal">S'abonner</span>
-                    <span id="mailinglist-button-label-pending">
-                        <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
-                        Inscription en cours...
-                    </span>
-                </button>
-            </form>
-            <p id="mailinglist-error" class="status-message status-message--error">
-                <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-                Nous n'avons pas pu vous inscrire à la mailing list. <br>
-                <a href="mailto:contact@laboiteacycler.org">Ecrivez-nous</a> et nous vous inscrirons manuellement.
-            </p>
-            <p id="mailinglist-success" class="status-message status-message--success">
-                <i class="fa fa-check" aria-hidden="true"></i>
-                Nous venons de vous envoyer un email contenant un lien de validation. <br>
-                Cliquez sur ce lien pour activer votre abonnement !
-            </p>
+                <form action="{{ page.header.mailchimp_post_url }}"
+                      method="post"
+                      name="mc-embedded-subscribe-form">
+                    <input type="email"
+                           required
+                           value=""
+                           name="EMAIL"
+                           placeholder="Adresse email...">
+                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                        <input type="text"
+                               name="{{ page.header.mailchimp_submit_button_name }}"
+                               tabindex="-1"
+                               value="">
+                    </div>
+                    <button type="submit" name="subscribe">
+                        S'abonner !
+                    </button>
+                </form>
             {% endif %}
 
             {% for question in page.header.questions %}

@@ -14,11 +14,14 @@ form:
                     fields:
                         header.background:
                             name: background
-                            type: pagemediaselect
+                            type: filepicker
                             label: Background
-                            multiple: false
-                            accept:
-                                - image/*
+                            preview_images: true
+#                            multiple: false
+#                            destination: 'self@'
+                            folder: '@self'
+#                            accept:
+#                                - image/*
                         header.size:
                             name: size
                             type: select
@@ -64,13 +67,6 @@ form:
                             options:
                                 small: Normal
                                 large: Large
-                        header.newsletter:
-                            name: newsletter
-                            type: toggle
-                            toggleable: true
-                            options:
-                                1: activated
-                                0: deactivated
                 questions:
                     type: tab
                     title: Questions
@@ -105,3 +101,22 @@ form:
                                 .author:
                                     type: text
                                     label: Author
+                newsletter:
+                    type: tab
+                    title: Newsletter
+                    fields:
+                        header.newsletter:
+                            name: newsletter
+                            type: toggle
+                            toggleable: true
+                            options:
+                                1: activated
+                                0: deactivated
+                        header.mailchimp_post_url:
+                            name: mailchimp_pst_url
+                            type: text
+                            label: MailChimp form's POST url
+                        header.mailchimp_submit_button_name:
+                            name: mailchimp_submit_button_name
+                            type: text
+                            label: MailChimp form's submit button name
