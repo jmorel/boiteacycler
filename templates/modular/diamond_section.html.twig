@@ -3,7 +3,7 @@
 <section id="{{ page.menu }}"
         {% if page.header.background %}
             {% set background =  page.header.background[page.header.background|keys[0]] %}
-            {% set background_url = page.url ~ '/' ~ background.name %}
+            {% set background_url = page.url ~ '/' ~ background.name|url_encode %}
             style="background-image: url('{{ background_url|lower }}')"
         {% endif %}>
     <div class="diamond-container">

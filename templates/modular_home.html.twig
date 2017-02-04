@@ -19,7 +19,12 @@
         </ul>
     </nav>
 
-    <header class="modular-home-header">
+    <header class="modular-home-header"
+            {% if page.header.background %}
+            {% set background =  page.header.background[page.header.background|keys[0]] %}
+            {% set background_url = '/' ~ background.name|url_encode %}
+        style="background-image: url('{{ background_url|lower }}')"
+            {% endif %}>
         <div class="diamond-container">
             <div class="diamond diamond--large diamond--left next-diamond--small next-diamond--right">
                 <a href="/" class="home-link">

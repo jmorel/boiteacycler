@@ -28,3 +28,10 @@ form:
                             name: google_api_key
                             type: text
                             label: Google developer API key
+                        header.background:
+                            type: file
+                            label: Background
+                            destination: '@self'
+                            accept:
+                                - image/*
+                            multiple: false

@@ -14,7 +14,7 @@ form:
                     fields:
                         header.background:
                             type: file
-                            label: Custom Logo Login Screen
+                            label: Background
                             destination: '@self'
                             accept:
                                 - image/*
