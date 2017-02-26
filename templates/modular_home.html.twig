@@ -19,11 +19,6 @@
 
 {% block content %}
     <nav>
-        <img src="{{ url('theme://images/logo.png') }}"
-             alt="La boite à cycler">
-        <button>
-            <i class="fa fa-hamburger" aria-hidden="true"></i>
-        </button>
         <ul>
             <li>
                 <a href="#prochain-evenement">Prochain événement</a>
@@ -42,7 +37,7 @@
                 <a href="/" class="home-link">
                     <img src="{{ url('theme://images/logo.png') }}" alt="La boite à cycler" class="logo">
                 </a>
-                <h1>
+                <h1 class="home-title">
                     {{ theme_config.tagline }}
                 </h1>
             </div>
@@ -82,7 +77,7 @@
         {{ subpage.content }}
     {% endfor %}
 
-    <footer>
+    <footer class="modular-home-footer">
         <div class="diamond-container">
             <div class="diamond diamond--large diamond--right previous-diamond--large previous-diamond--left">
                 <div class="row">
