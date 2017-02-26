@@ -1,11 +1,4 @@
-{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
-
-<section id="{{ page.menu }}"
-        {% if page.header.background %}
-            {% set background =  page.header.background[page.header.background|keys[0]] %}
-            {% set background_url = page.url ~ '/' ~ background.name|url_encode %}
-            style="background-image: url('{{ background_url|lower }}')"
-        {% endif %}>
+<section id="{{ page.menu }}">
     <div class="diamond-container">
         <div class="diamond diamond--{{ page.header.position }} diamond--{{ page.header.size }} previous-diamond--{{ page.header.previous_position }} previous-diamond--{{ page.header.previous_size }} next-diamond--{{ page.header.next_size }} next-diamond--{{ page.header.next_position }}">
             <h2>{{ page.title }}</h2>

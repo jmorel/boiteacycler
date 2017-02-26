@@ -12,13 +12,6 @@ form:
                     type: tab
                     title: Layout options
                     fields:
-                        header.background:
-                            type: file
-                            label: Background
-                            destination: '@self'
-                            accept:
-                                - image/*
-                            multiple: false
                         header.size:
                             name: size
                             type: select
