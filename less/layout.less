@@ -13,22 +13,26 @@ footer {
 
 // HEADER
 
-.modular-home-header {
+header {
     padding-bottom: @spacing;
 
     .home-link {
         display: block;
     }
 
-    .home-title {
+    h1 {
         position: relative;
         margin: 0;
-        padding: @spacing/2 @spacing @spacing @spacing;
-        background-color: rgba(255, 255, 255, 0.9);
+        padding: @spacing;
+        background-image: linear-gradient(
+                rgba(255, 255, 255, 0) 0,
+                rgba(255, 255, 255, 0.9) @spacing,
+                rgba(255, 255, 255, 0.9)
+        );
 
         @media (min-width: @screen-md-min) {
             text-align: right;
-            margin-top: ~"calc(-1em - @{spacing}/2)";
+            margin-top: ~"calc(-1em - @{spacing})";
         }
 
     }
@@ -41,13 +45,12 @@ footer {
         padding: 0;
     }
 
-    .diamond-container {
-        padding-top: @spacing;
-    }
+}
 
+header.modular-home-header {
     .diamond:first-child {
+        padding: @spacing 0 0 0;
         margin-bottom: 2*@spacing;
-        position: relative;
     }
 }
 
@@ -59,7 +62,7 @@ section {
 
 // FOOTER
 
-.modular-home-footer {
+footer {
     padding-top: @spacing;
     font-size: 0.8em;
 
