@@ -13,13 +13,13 @@ license: MIT
 form:
   fields:
     background:
-        type: file
-        label: BOITEACYCLER.BACKGROUND.LABEL
-        help: BOITEACYCLER.BACKGROUND.HELP
-        destination: 'theme@:/assets'
-        accept:
-            - image/*
-        multiple: false
+      type: file
+      label: BOITEACYCLER.BACKGROUND.LABEL
+      help: BOITEACYCLER.BACKGROUND.HELP
+      destination: 'theme@:/assets'
+      accept:
+        - image/*
+      multiple: false
     google_webmaster_tools_id:
       name: google_webmaster_tools_id
       type: text
