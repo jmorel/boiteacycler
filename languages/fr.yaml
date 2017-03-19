@@ -1,5 +1,8 @@
 BOITEACYCLER:
   THEME_DESCRIPTION: "Le thème de l'association Boite à Cycler"
+  BACKGROUND:
+    LABEL: Image de fond
+    HELP: Image utilisée en tant que fond sur l'ensemble du site
   GOOGLE_WEBMASTER_TOOLS_ID:
     LABEL: Identifiant Google webmaster Tools
     HELP: Identifiant fourni par Google Webmaster Tools permettant d'identifier ce site
@@ -12,3 +15,53 @@ BOITEACYCLER:
   FOOTER_COLUMN_CONTENT:
     LABEL: Contenu de la colonne
     HELP: Essayez d'équilibrer la quantité de contenu des colonnes
+  HEADER:
+    TITLE: Calendrier
+    CALL_TO_ACTION:
+      LABEL: Contenu additionnel
+      HELP: Il sera affiché juste en dessous de la boite "prochain événement"
+    CALENDAR_URL:
+      LABEL: URL du calendrier
+      HELP: Ce calendrier sera inclu via une iframe
+    CALENDAR_ID:
+      LABEL: Google Calendar ID
+      HELP: L'identifiant google pour ce calendrier, nécessaire pour obtenir le prochain événement
+    GOOGLE_API_KEY:
+      LABEL: Google Developer API key
+      HELP: Votre clef d'API Goole Developer, nécessaire pour obtenir le prochain événement
+  DIAMOND_SECTION:
+    LAYOUT:
+      TITLE: Taille, forme et position
+      SIZE: Largeur de la section
+      POSITION: Position de la section
+      PREVIOUS_SIZE: Largeur de la section précédente
+      PREVIOUS_POSITION: Position de la section précédente
+      NEXT_SIZE: Largeur de la section suivante
+      NEXT_POSITION: Position de la section précédente
+      SIZE_SMALL: Normale
+      SIZE_LARGE: Large
+      POSITION_LEFT: A gauche
+      POSITION_CENTER: Au centre
+      POSITION_RIGHT: A droite
+    QUOTES:
+      TITLE: Citations
+      HELP: Cliquez sur "Ajouter un élément" pour ajouter une citation
+      QUOTE:
+        QUOTE: Citation
+        AUTHOR: Auteur
+    QUESTIONS:
+      TITLE: FAQ
+      HELP: Cliquez sur "Ajouter un élément" pour ajouter une question à cette FAQ
+      QUESTION: Question
+      ANSWER: Réponse
+    NEWSLETTER:
+      TITLE: Newsletter
+      TOGGLE: Afficher le formulaire d'inscription à la newsletter
+      TOGGLE_ON: Oui
+      TOGGLE_OFF: Non
+      MAILCHIMP_POST_URL:
+        LABEL: URL du formulaire MailChimp
+        HELP: URL de POST fournie par MailChimp
+      MAILCHIMP_SUBMIT_BUTTON_NAME:
+        LABEL: Propriété name du bouton "s'abonner"
+        HELP: Fourni par MailChimp, il s'agit de la valeur de l'attribut "name" sur le bouton "submit"

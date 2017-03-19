@@ -17,6 +17,19 @@
             {% do assets.addCss('theme://vendor/Font-Awesome-4.7.0/css/font-awesome.min.css', 99) %}
             {% do assets.addCss('theme://vendor/normalize.css-5.0.0/normalize.css', 98) %}
             {% do assets.addCss('theme://css-compiled/boiteacycler.min.css', 0) %}
+
+            {% if theme_config.background %}
+                {% set background =  theme_config.background[theme_config.background|keys[0]] %}
+                {% set background_url = '/user/themes/boiteacycler/assets/' ~ background.name|url_encode %}
+                <style>
+                    body {
+                        background-image: url('{{ background_url|lower }}');
+                        background-attachment: fixed;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                    }
+                </style>
+            {% endif %}
         {% endblock stylesheets %}
 
 

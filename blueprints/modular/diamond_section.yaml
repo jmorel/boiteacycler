@@ -2,111 +2,114 @@ title: Diamond section
 '@extends': default
 
 form:
-    fields:
-        tabs:
-            type: tabs
-            active: 1
+  fields:
+    tabs:
+      type: tabs
+      active: 1
 
-            fields:
-                layout:
-                    type: tab
-                    title: Layout options
-                    fields:
-                        header.size:
-                            name: size
-                            type: select
-                            label: Size
-                            options:
-                                small: Normal
-                                large: Large
-                        header.position:
-                            name: position
-                            type: select
-                            label: Position
-                            options:
-                                left: Left
-                                center: Center
-                                right: Right
-                        header.previous_position:
-                            name: previous_position
-                            type: select
-                            label: Previous diamond's position
-                            options:
-                                left: Left
-                                center: Center
-                                right: Right
-                        header.previous_size:
-                            name: previous_size
-                            type: select
-                            label: Previous diamond's size
-                            options:
-                                small: Normal
-                                large: Large
-                        header.next_position:
-                            name: next_position
-                            type: select
-                            label: Next diamond's position
-                            options:
-                                left: Left
-                                center: Center
-                                right: Right
-                        header.next_size:
-                            name: next_size
-                            type: select
-                            label: Next diamond's size
-                            options:
-                                small: Normal
-                                large: Large
-                questions:
-                    type: tab
-                    title: Questions
-                    fields:
-                        header.questions:
-                            name: questions
-                            type: list
-                            label: Questions
-                            style: vertical
-
-                            fields:
-                                .question:
-                                    type: text
-                                    label: Question
-                                .answer:
-                                    type: textarea
-                                    label: Réponse
-                quotes:
-                    type: tab
-                    title: Quotes
-                    fields:
-                        header.quotes:
-                            name: quotes
-                            type: list
-                            label: Quotes
-                            style: vertical
-
-                            fields:
-                                .quote:
-                                    type: textarea
-                                    label: Quote
-                                .author:
-                                    type: text
-                                    label: Author
-                newsletter:
-                    type: tab
-                    title: Newsletter
-                    fields:
-                        header.newsletter:
-                            name: newsletter
-                            type: toggle
-                            toggleable: true
-                            options:
-                                1: activated
-                                0: deactivated
-                        header.mailchimp_post_url:
-                            name: mailchimp_pst_url
-                            type: text
-                            label: MailChimp form's POST url
-                        header.mailchimp_submit_button_name:
-                            name: mailchimp_submit_button_name
-                            type: text
-                            label: MailChimp form's submit button name
+      fields:
+        layout:
+          type: tab
+          title: BOITEACYCLER.DIAMOND_SECTION.LAYOUT.TITLE
+          fields:
+            header.size:
+              name: size
+              type: select
+              label: BOITEACYCLER.DIAMOND_SECTION.LAYOUT.SIZE
+              options:
+                small: BOITEACYCLER.DIAMOND_SECTION.LAYOUT.SIZE_SMALL
+                large: BOITEACYCLER.DIAMOND_SECTION.LAYOUT.SIZE_LARGE
+            header.position:
+              name: position
+              type: select
+              label: BOITEACYCLER.DIAMOND_SECTION.LAYOUT.POSITION
+              options:
+                left: BOITEACYCLER.DIAMOND_SECTION.LAYOUT.POSITION_LEFT
+                center: BOITEACYCLER.DIAMOND_SECTION.LAYOUT.POSITION_CENTER
+                right: BOITEACYCLER.DIAMOND_SECTION.LAYOUT.POSITION_RIGHT
+            header.previous_position:
+              name: previous_position
+              type: select
+              label: BOITEACYCLER.DIAMOND_SECTION.LAYOUT.PREVIOUS_POSITION
+              options:
+                left: BOITEACYCLER.DIAMOND_SECTION.LAYOUT.POSITION_LEFT
+                center: BOITEACYCLER.DIAMOND_SECTION.LAYOUT.POSITION_CENTER
+                right: BOITEACYCLER.DIAMOND_SECTION.LAYOUT.POSITION_RIGHT
+            header.previous_size:
+              name: previous_size
+              type: select
+              label: BOITEACYCLER.DIAMOND_SECTION.LAYOUT.PREVIOUS_SIZE
+              options:
+                small: BOITEACYCLER.DIAMOND_SECTION.LAYOUT.SIZE_SMALL
+                large: BOITEACYCLER.DIAMOND_SECTION.LAYOUT.SIZE_LARGE
+            header.next_position:
+              name: next_position
+              type: select
+              label: BOITEACYCLER.DIAMOND_SECTION.LAYOUT.NEXT_POSITION
+              options:
+                left: BOITEACYCLER.DIAMOND_SECTION.LAYOUT.POSITION_LEFT
+                center: BOITEACYCLER.DIAMOND_SECTION.LAYOUT.POSITION_CENTER
+                right: BOITEACYCLER.DIAMOND_SECTION.LAYOUT.POSITION_RIGHT
+            header.next_size:
+              name: next_size
+              type: select
+              label: BOITEACYCLER.DIAMOND_SECTION.LAYOUT.NEXT_POSITION
+              options:
+                small: BOITEACYCLER.DIAMOND_SECTION.LAYOUT.SIZE_SMALL
+                large: BOITEACYCLER.DIAMOND_SECTION.LAYOUT.SIZE_LARGE
+        questions:
+          type: tab
+          title: BOITEACYCLER.DIAMOND_SECTION.QUESTIONS.TITLE
+          fields:
+            header.questions:
+              name: questions
+              type: list
+              label: BOITEACYCLER.DIAMOND_SECTION.QUESTIONS.TITLE
+              help: BOITEACYCLER.DIAMOND_SECTION.QUESTIONS.HELP
+              style: vertical
+              fields:
+                .question:
+                  type: text
+                  label: BOITEACYCLER.DIAMOND_SECTION.QUESTIONS.QUESTION
+                .answer:
+                  type: textarea
+                  label: BOITEACYCLER.DIAMOND_SECTION.QUESTIONS.ANSWER
+        quotes:
+          type: tab
+          title: BOITEACYCLER.DIAMOND_SECTION.QUOTES.TITLE
+          fields:
+            header.quotes:
+              name: quotes
+              type: list
+              label: BOITEACYCLER.DIAMOND_SECTION.QUOTES.TITLE
+              help: BOITEACYCLER.DIAMOND_SECTION.QUOTES.HELP
+              style: vertical
+              fields:
+                .quote:
+                  type: textarea
+                  label: BOITEACYCLER.DIAMOND_SECTION.QUOTES.QUOTE.QUOTE
+                .author:
+                  type: text
+                  label: BOITEACYCLER.DIAMOND_SECTION.QUOTES.QUOTE.AUTHOR
+        newsletter:
+          type: tab
+          title: BOITEACYCLER.DIAMOND_SECTION.NEWSLETTER.TITLE
+          fields:
+            header.newsletter:
+              name: newsletter
+              label: BOITEACYCLER.DIAMOND_SECTION.NEWSLETTER.TOGGLE
+              type: toggle
+              toggleable: true
+              options:
+                1: BOITEACYCLER.DIAMOND_SECTION.NEWSLETTER.TOGGLE_ON
+                0: BOITEACYCLER.DIAMOND_SECTION.NEWSLETTER.TOGGLE_OFF
+            header.mailchimp_post_url:
+                name: mailchimp_pst_url
+                type: text
+                label: BOITEACYCLER.DIAMOND_SECTION.NEWSLETTER.MAILCHIMP_POST_URL.LABEL
+                help: BOITEACYCLER.DIAMOND_SECTION.NEWSLETTER.MAILCHIMP_POST_URL.HELP
+            header.mailchimp_submit_button_name:
+                name: mailchimp_submit_button_name
+                type: text
+                label: BOITEACYCLER.DIAMOND_SECTION.NEWSLETTER.MAILCHIMP_SUBMIT_BUTTON_NAME.LABEL
+                help: BOITEACYCLER.DIAMOND_SECTION.NEWSLETTER.MAILCHIMP_SUBMIT_BUTTON_NAME.HELP

@@ -2,36 +2,33 @@ title: modular_home
 @extends: 'modular'
 
 form:
-    fields:
-        tabs:
-            type: tabs
-            active: 1
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+      fields:
+        header:
+          type: tab
+          title: BOITEACYCLER.HEADER.TITLE
+          fields:
+            header.header_calendar_url:
+              name: calendar_url
+              type: text
+              label: BOITEACYCLER.HEADER.CALENDAR_URL.LABEL
+              help: BOITEACYCLER.HEADER.CALENDAR_URL.HELP
+            header.header_events_call_to_action:
+              name: events_call_to_action
+              type: markdown
+              label: BOITEACYCLER.HEADER.CALL_TO_ACTION.LABEL
+              help: BOITEACYCLER.HEADER.CALL_TO_ACTION.HELP
+            header.header_calendar_id:
+              name: calendar_id
+              type: text
+              label: BOITEACYCLER.HEADER.CALENDAR_ID.LABEL
+              help: BOITEACYCLER.HEADER.CALENDAR_ID.HELP
+            header.header_google_api_key:
+              name: google_api_key
+              type: text
+              label: BOITEACYCLER.HEADER.GOOGLE_API_KEY.LABEL
+              help: BOITEACYCLER.HEADER.GOOGLE_API_KEY.HELP
 
-            fields:
-                header:
-                    type: tab
-                    title: Header
-                    fields:
-                        header.header_events_call_to_action:
-                            name: events_call_to_action
-                            type: markdown
-                            label: Events call to action
-                        header.header_calendar_url:
-                            name: calendar_url
-                            type: text
-                            label: URL for the calendar page (will be included through an iframe)
-                        header.header_calendar_id:
-                            name: calendar_id
-                            type: text
-                            label: Google calendar's ID
-                        header.header_google_api_key:
-                            name: google_api_key
-                            type: text
-                            label: Google developer API key
-                        header.background:
-                            type: file
-                            label: Background
-                            destination: '@self'
-                            accept:
-                                - image/*
-                            multiple: false
