@@ -1,7 +1,7 @@
 name: Boite A Cycler
 version: 0.0.1
-description: "A one-page theme for the Boite à Cycler associqtion"
-icon: empire
+description: BOITEACYCLER.THEME_DESCRIPTION
+icon: bicycle
 author:
   name: Jérémy Morel
   email: jeremy@hexagonal.io
@@ -15,23 +15,22 @@ form:
     google_webmaster_tools_id:
       name: google_webmaster_tools_id
       type: text
-      label: Google Webmaster tools ID
-    mailinglist_subscribe_url:
-      name: mailinglist_subscribe_url
-      type: text
-      label: Mailing list subscribe URL
+      label: BOITEACYCLER.GOOGLE_WEBMASTER_TOOLS_ID.LABEL
+      help: BOITEACYCLER.GOOGLE_WEBMASTER_TOOLS_ID.HELP
     tagline:
       name: tagline
       type: text
-      label: Tagline
+      label: BOITEACYCLER.TAGLINE.LABEL
+      help: BOITEACYCLER.TAGLINE.HELP
     footer_columns:
       name: columns
       type: list
-      label: Columns
+      label: BOITEACYCLER.FOOTER_COLUMNS.LABEL
+      help: BOITEACYCLER.FOOTER_COLUMNS.HELP
       style: vertical
-
       fields:
-          .content:
-              name: content
-              type: markdown
-              label: Content
+        .content:
+          name: content
+          type: markdown
+          label: BOITEACYCLER.FOOTER_COLUMN_CONTENT.LABEL
+          help: BOITEACYCLER.FOOTER_COLUMN_CONTENT.HELP

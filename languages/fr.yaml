@@ -1,0 +1,14 @@
+BOITEACYCLER:
+  THEME_DESCRIPTION: "Le thème de l'association Boite à Cycler"
+  GOOGLE_WEBMASTER_TOOLS_ID:
+    LABEL: Identifiant Google webmaster Tools
+    HELP: Identifiant fourni par Google Webmaster Tools permettant d'identifier ce site
+  TAGLINE:
+    LABEL: Accroche d'en-tête
+    HELP: Une courte phrase affichée sous le logo dans l'en-tête
+  FOOTER_COLUMNS:
+    LABEL: Colonnes du pied de page
+    HELP: Il faut au minimum une colonne dans le pied de page, mais il n'y a pas de limite supérieure (bien qu'il soit déconseillé d'en mettre plus de 3)
+  FOOTER_COLUMN_CONTENT:
+    LABEL: Contenu de la colonne
+    HELP: Essayez d'équilibrer la quantité de contenu des colonnes
