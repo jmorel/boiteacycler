@@ -20,10 +20,9 @@
 
             {% if theme_config.background %}
                 {% set background =  theme_config.background[theme_config.background|keys[0]] %}
-                {% set background_url = '/user/themes/boiteacycler/assets/' ~ background.name|url_encode %}
                 <style>
                     body {
-                        background-image: url('{{ background_url|lower }}');
+                        background-image: url('{{ url("theme://assets/" ~ background.name) }}');
                         background-attachment: fixed;
                         background-size: cover;
                         background-repeat: no-repeat;

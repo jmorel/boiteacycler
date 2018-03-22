@@ -13,7 +13,7 @@
     for (i = 0; i < navItemElements.length; i++) {
         var href = navItemElements[i].href;
         var sectionId = href.substring(href.indexOf('#') + 1, href.length);
-        var sectionElement = document.getElementById(sectionId);
+        var sectionElement = document.getElementById(decodeURIComponent(sectionId));
         sections.push({
             element: sectionElement,
             navElement: navItemElements[i],

@@ -13,6 +13,7 @@ license: MIT
 form:
   fields:
     background:
+      name: background
       type: file
       label: BOITEACYCLER.BACKGROUND.LABEL
       help: BOITEACYCLER.BACKGROUND.HELP
